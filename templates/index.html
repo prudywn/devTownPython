@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boston Housing Price</title>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css'>
+        <link rel='stylesheet' href='/static/css/index.css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="section">
+                <div class="columns is-centered">
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-header">
+                                <p class="card-header-title is-centered">
+                                    <span class="icon">
+                                        <i class="fas fa-home"></i>
+                                    </span>
+                                    Boston Housing Price Prediction
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <form action='/predict' method='post' class="housing-form">
+                                    
+                                    <div class="columns is-multiline">
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='CRIM'>Crime Rate (CRIM):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='CRIM' id='CRIM' placeholder="0.00632" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='ZN'>Zoned Land (ZN):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='ZN' id='ZN' placeholder="18.0" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='INDUS'>Industrial (INDUS):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='INDUS' id='INDUS' placeholder="2.31" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='CHAS'>Charles River (CHAS):</label>
+                                                <div class="control">
+                                                    <div class="select is-fullwidth">
+                                                        <select name='CHAS' id='CHAS' required>
+                                                            <option value="">Select...</option>
+                                                            <option value="0">No</option>
+                                                            <option value="1">Yes</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='NOX'>Nitric Oxides (NOX):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='NOX' id='NOX' placeholder="0.538" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='RM'>Avg Rooms (RM):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='RM' id='RM' placeholder="6.575" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='AGE'>Age of Home (AGE):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='AGE' id='AGE' placeholder="65.2" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='DIS'>Distance (DIS):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='DIS' id='DIS' placeholder="4.09" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='RAD'>Highway Access (RAD):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='RAD' id='RAD' placeholder="1" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='TAX'>Tax Rate (TAX):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='TAX' id='TAX' placeholder="296" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='PTRATIO'>Pupil-Teacher Ratio (PTRATIO):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='PTRATIO' id='PTRATIO' placeholder="15.3" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='B'>Black Population (B):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='B' id='B' placeholder="396.9">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="column is-half">
+                                            <div class="field">
+                                                <label class="label" for='LSTAT'>Lower Status (LSTAT):</label>
+                                                <div class="control">
+                                                    <input class="input" type='number' step="any" name='LSTAT' id='LSTAT' placeholder="4.98">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="field is-grouped is-grouped-centered">
+                                        <div class="control">
+                                            <button class="button is-primary is-large" type="submit">
+                                                <span class="icon">
+                                                    <i class="fas fa-calculator"></i>
+                                                </span>
+                                                <span>Predict Price</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                {% if prediction_text %}
+                                    <div class="notification is-success result-box">
+                                        <p class="title is-5">Prediction Result</p>
+                                        <p class="subtitle is-6">{{ prediction_text }}</p>
+                                    </div>
+                                {% endif %}
+
+                                {% if error %}
+                                    <div class="notification is-danger result-box">
+                                        <p class="title is-5">Error</p>
+                                        <p class="subtitle is-6">{{ error }}</p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

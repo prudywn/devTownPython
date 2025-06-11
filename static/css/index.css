@@ -1,0 +1,164 @@
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+.card-header-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-content: center;
+}
+
+.card-header-title .icon {
+    margin-right: 0.5rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.housing-form .field {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    color: #363636;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.input, .select select {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.input:focus, .select select:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 0.125em rgba(255, 107, 107, 0.25);
+}
+
+.input::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+.select.is-fullwidth select {
+    width: 100%;
+}
+
+.button.is-primary {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.button.is-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.result-box {
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.notification.is-success {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+}
+
+.notification.is-danger {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    color: white;
+}
+
+.notification .title, .notification .subtitle {
+    color: white;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .column.is-half {
+        width: 100% !important;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .card-header-title {
+        font-size: 1.25rem;
+    }
+    
+    .button.is-large {
+        font-size: 1rem;
+    }
+}
+
+/* Hover effects for input fields */
+.field:hover .input,
+.field:hover .select select {
+    border-color: #b0b0b0;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #d84315 100%);
+}
